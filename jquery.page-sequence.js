@@ -1,5 +1,5 @@
 /*
- * Simple page sequnce jQuery plugin
+ * jQuery Page Sequencer plugin
  * Author: Rob Flaherty | rob@ravelrumba.com
  * Copyright (c) 2010 Rob Flaherty 
  * MIT Licensed: http://www.opensource.org/licenses/mit-license.php
