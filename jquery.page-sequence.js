@@ -46,31 +46,32 @@
                     
                     //Build HTML for navigation
                     var navHTML = '<ul id="pageSequenceNav">';
-                        navHTML += '<li class="previousPage"><a href="' + urlData[pagePrev] + '">' + config.prevText + '</a></li>';
-                        navHTML += '<li class="nextPage"><a href="' + urlData[pageNext] + '">' + config.nextText + '</a></li></ul>';
-                    
-                    //Insert navigation
-                    $(navElement).append(navHTML);
+                    navHTML += '<li class="previousPage"><a href="' + urlData[pagePrev] + '">' + config.prevText + '</a></li>';
+                    navHTML += '<li class="nextPage"><a href="' + urlData[pageNext] + '">' + config.nextText + '</a></li></ul>';
+                    navHTML = $(navHTML);
                     
                     //Handle first page case
                     if (pageID === 0) {
                         if (config.continuous === false) {                   
-                            $('.previousPage').hide();
+                            $('.previousPage', navHTML).hide();
                         } else {
                             pagePrev = (pageCount -1);
-                            $('.previousPage a').attr('href', urlData[pagePrev]);
+                            $('.previousPage a', navHTML).attr('href', urlData[pagePrev]);
                         }
                     }
                     
                     //Handle last page case
                     if (pageID == (pageCount -1)) {
                         if (config.continuous === false) {
-                            $('.nextPage').hide(); 
+                            $('.nextPage', navHTML).hide(); 
                         } else {
                             pageNext = 0;
-                            $('.nextPage a').attr('href', urlData[pageNext]);
+                            $('.nextPage a', navHTML).attr('href', urlData[pageNext]);
                         }
-                    }    
+                    }
+                    
+                    //Insert navigation
+                    $(navElement).append(navHTML);  
                 }
                    
                 //Check if current page exists in our array of URLs                
