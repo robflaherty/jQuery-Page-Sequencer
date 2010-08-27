@@ -36,7 +36,7 @@
                     currentPage = currentPath.substr(currentPath.lastIndexOf('/')+1),  
                     
                     //Get index of current page
-                    currentIndex = urlData.indexOf(currentPage);                
+                    currentIndex = $.inArray(currentPage, urlData);
                 
                 //Function to determine and write next/prev links
                 function setNavLinks(pageID){
